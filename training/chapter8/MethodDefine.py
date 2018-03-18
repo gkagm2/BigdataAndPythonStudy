@@ -15,6 +15,8 @@ class Television:
     def getChannel(self):
         return self.channel
 
+# 메소드 호출
+
 t = Television(9,10,True)
 
 t.show()
