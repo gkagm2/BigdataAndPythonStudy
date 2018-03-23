@@ -7,4 +7,4 @@ obj = Student()
 
 
 # 에러가 뜬다.
-print(obj.__age)
+#print(obj.__age)
