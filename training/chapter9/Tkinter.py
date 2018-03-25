@@ -11,3 +11,8 @@ label = Label(window, text="Hello world") #label widget 생성
 label.pack()
 
 window.mainloop() # event handler 시작
+
+#tkinter 프로그램은 이벤트에 기반을 두고 동작 됨.
+
+# 메인 프로그램 -> 호출한다 -> 라이브러리 함수(소프트웨어 라이브러리) -> 호출한다 -> 콜백함수
+# 이벤트가 발생하면 라이브러리에서 사용자가 지정한 콜백 함수를 호출하는 개념임
