@@ -1,7 +1,9 @@
 # Dijkstra algorithm
-startvertice = 0
+START_VERTICE= 0
 INF = 1000
 MAX_VERTICES = 7
+max_vertices = 0
+
 MAX = 2147483647
 distance = [0 for i in range(MAX_VERTICES)] # distance = []
 found = [0 for i in range(MAX_VERTICES)]
@@ -12,7 +14,11 @@ weight = [[0,7, INF, INF, 3, 10, INF],
           [3, 2, INF, 11, 0, INF, 5],
           [10, 6, INF, 9, INF, 0, INF],
           [INF, INF, INF, 4, 5, INF, 0]]
-preList= [startvertice for i in range(MAX_VERTICES)]
+
+
+
+
+
 
 # 최소 weight를 찾기.
 def choose(distance, n, found):
@@ -25,37 +31,39 @@ def choose(distance, n, found):
             minpos = i #최소값이나온 노드를 minpo에 넣는다.
     return minpos # 그 노드 return한다.
 
-def shortest_path(start, n):
+def shortest_path(start, n, preList):
+    try:
+        if start < 0:
+            print("vertice가 존재하기 않습니다.")
+            exit()
+        for i in range(0,n): # 초기화
+            distance[i] = weight[start][i]
+            found[i] = False
+        found[start] = True # 시작 정점 방문
 
-    for i in range(0,n): # 초기화
-        distance[i] = weight[start][i]
-        found[i] = False
-    found[start] = True # 시작 정점 방문
+        flag = 0
 
-    flag = 0
+        distance[start] = 0
+        for i in range(0, n-2):
+            u = choose(distance, n, found)
+            found[u] = True # u의 정점 방문
 
-    distance[start] = 0
-    for i in range(0, n-2):
-        u = choose(distance, n, found)
-        found[u] = True # u의 정점 방문
+            if flag == 0:
+                preList[u] = start
+                flag = 1
+            for w in range(0,n): # 최대 정점의 개수까지 돌린다.
 
-        if flag == 0:
-            preList[u] = start
-            flag = 1
-        for w in range(0,n): # 최대 정점의 개수까지 돌린다.
+                if not found[w]: #found[w]가 true이면서
+                    if distance[u] + weight[u][w] < distance[w]: # 방문했었던 u의 가중치와 현재 u에서 w 까지의 거리를 더한 값이 이전의 가중치보다 작으면
+                        distance[w] = distance[u] + weight[u][w] #
+                        preList[w] = u #방문했던 u의 정점을 preList에 넣는다.
+    except IndexError:
+        print("vertice가 존재가지 않습니다.")
+        exit()
 
-            if not found[w]: #found[w]가 true이면서
-                if distance[u] + weight[u][w] < distance[w]: # 방문했었던 u의 가중치와 현재 u에서 w 까지의 거리를 더한 값이 이전의 가중치보다 작으면
-                    distance[w] = distance[u] + weight[u][w] #
-                    preList[w] = u #방문했던 u의 정점을 preList에 넣는다.
+def print_shortest_path(startvertice, maxVertices, preList):
 
-
-
-def main():
-
-    shortest_path(startvertice, MAX_VERTICES)
-
-    for i in range(MAX_VERTICES):
+    for i in range(maxVertices):
         if startvertice != i:
             print(startvertice,"에서 ,",i,"까지의 경로")
             m = i
@@ -73,28 +81,47 @@ def main():
 
 
 
+def main():
 
+    choice = input("예제 출력 : 1, 파일 입력 : 2 ")
+    if int(choice) is 1:
+        preList = [START_VERTICE for i in range(MAX_VERTICES)]
+        shortest_path(START_VERTICE, MAX_VERTICES, preList)
+        print_shortest_path(START_VERTICE,MAX_VERTICES, preList)
+    elif int(choice) is 2:
 
+        try:
+            filename = input("파일 이름을 입력하시오:")
+            file = open(filename, "r")
 
-    #shortest_path(0,"mygaph.txt") # file
+        except IOError:
+            print("파일이 존재하지 않습니다.")
+        else:
+            startvertice = int(input("시작 vertice를 입력하세요 :"))
+            flag = 0
+            weight2 = []
+            preList = [startvertice for i in range(MAX_VERTICES)]
+            for line in file:
+                if flag == 0:
+                    max_vertices = int(line)
+                    if startvertice >= max_vertices and startvertice < 0:
+                        print("vertice가 존재하지 않습니다.")
+                        file.close()
+                        exit()
+                        break
+                    flag += 1
 
-    # try:
-    #     path = input("파일 이름을 입력하세요:")
-    #     fileName = open(path, "r")
-    # except IOError:
-    #     print("파일이 존재하지 않습니다")
-    # else:
-    #     print("파일이 존재합니다.")
-    #
-    # for i in weight:
-    #     print(i)
+                r = line.rstrip()
+                word_list=r.split(', ')
+                weight2 += [word_list]
 
+            file.close()
 
-    # count =0
-    # for i in found:
-    #     print("found ",count, " is " , found[i])
-    #     count += 1
+            shortest_path(startvertice, max_vertices, preList)
+            print_shortest_path(startvertice,max_vertices, preList)
 
+    else:
+        print("잘못 입력하셨습니다.")
 
 
 main()
