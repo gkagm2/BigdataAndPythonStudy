@@ -1,3 +1,8 @@
+from tkinter import *
+from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import asksaveasfilename
+
+
 # Dijkstra algorithm
 START_VERTICE= 0
 INF = 1000
@@ -91,8 +96,10 @@ def main():
     elif int(choice) is 2:
 
         try:
-            filename = input("파일 이름을 입력하시오:")
-            file = open(filename, "r")
+            readFile = askopenfilename()
+            if readFile != None:
+                file = open(readFile, "r", encoding="utf-8")  # filename을 readFile로 바꿈
+            # filename = input("파일 이름을 입력하시오:")
 
         except IOError:
             print("파일이 존재하지 않습니다.")
