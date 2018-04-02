@@ -10,3 +10,5 @@
 + IPython Notebook (Jupyter Notebook)
    an open-source web application that allows you to create and share
    documents that contain live code, equations, visualizations and narrative text
+
++ request, BeautifulSoup install site : https://beomi.github.io/2017/01/20/HowToMakeWebCrawler/
