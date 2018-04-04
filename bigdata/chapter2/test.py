@@ -1,3 +1,4 @@
+# 타임존별 사용자 수를 모두 구하여라
 import json
 from collections import defaultdict
 
