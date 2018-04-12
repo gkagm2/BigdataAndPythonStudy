@@ -12,6 +12,15 @@ print(names)
 print(data)
 
 
-value = np.array([[1,2,3],[4,5,6],[7,8,9]])
-print(value)
-print(value[:,:2])
+print(names == 'Bob')
+
+print(data[names == 'Bob',2:]) # 이렇게도 된다.
+
+print(data[names == 'Bob', 3])
+
+print(names != 'Bob') # 'Bob'이 아닌 요소를 선택하려면 != 연산자를 사용하거나 -를 사용해서 조건 절을 부정하면 된다.
+
+print(data[(names == 'Bob')])
+
+data[names != 'Joe'] = 7
+print(data)
