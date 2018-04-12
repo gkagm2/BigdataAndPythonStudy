@@ -16,3 +16,4 @@ print(arr2.dtype)
 print(np.empty((2,3,4))) # 2개의 3행 4열짜리 gabage 배열을 생성한다.
 print(np.zeros((3,6))) # 3행 6열에 0으로 초기화된 배열 생성
 print(np.zeros(10)) # 1행 10열에 0으로 초기화된 배열 생성
+
