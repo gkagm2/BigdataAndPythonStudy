@@ -1,3 +1,11 @@
-asd = 66
+fiboList  = {0:0, 1:1}
 
-print( asd//4)
+def fibm(n):
+    if not n in fiboList:
+        fiboList[n] = fibm(n-1) + fibm(n-2)
+        print(fiboList)
+    return fiboList[n]
+n = int(input("정수를 입력하시오:"))
+
+print(fiboList)
+print(n, "번째 피보나치 수는  ", fibm(n))
