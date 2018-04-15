@@ -1,5 +1,6 @@
 studing site : https://www.learnpython.org/en/
 
+### training
 + chapter1 : introduce python
 + chapter2 : variables and calculations
 + chapter3 : select 
@@ -14,4 +15,7 @@ studing site : https://www.learnpython.org/en/
 + chapter12 : file, exception
 + chapter13 : recursion, sort, search
 + chapter20 : lambda
-+ bigdata : chapter2, chatper4
+
+### bigdata
++ chatper2
++ chatper4
