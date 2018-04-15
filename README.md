@@ -13,5 +13,5 @@ studing site : https://www.learnpython.org/en/
 + chapter11 : inheritance, polymorphism
 + chapter12 : file, exception
 + chapter13 : recursion, sort, search
-
++ chapter20 : lambda
 + bigdata : chapter2, chatper4
