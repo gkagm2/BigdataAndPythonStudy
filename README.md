@@ -15,6 +15,7 @@ studing site : https://www.learnpython.org/en/
 + chapter12 : file, exception
 + chapter13 : recursion, sort, search
 + chapter20 : lambda
++ chapter21 : module
 
 ### bigdata
 + chatper2
