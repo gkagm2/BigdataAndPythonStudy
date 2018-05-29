@@ -18,5 +18,12 @@ studing site : https://www.learnpython.org/en/
 + chapter21 : module
 
 ### bigdata
-+ chatper2
-+ chatper4
++ chapter2 :
++ chapter4 : numbpy
++ chapter5 : pandas
++ chapter6 : data load, save, file format
++ chapter7 : data wrangling : clean, transform, merge, reshape
++ chapter8 : plotting and visualization
++ chapter9 : data aggregation and group operations
++ chapter10 : time series
+
