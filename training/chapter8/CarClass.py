@@ -13,7 +13,6 @@ class Car:
 
     # __str__ :
     def __str__(self):
-        # 이게 무슨 문장이지.
         return '(%d, %d, %s)' % (self.__speed, self.__gear, self.__color)
 
 myCar = Car()

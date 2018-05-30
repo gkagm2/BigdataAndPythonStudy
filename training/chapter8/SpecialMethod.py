@@ -1,4 +1,7 @@
 # 특수 메소드
+
+# 파이썬에는 연산자( + , - , * , / )에 관련된 특수 메소드(special method)가 있다.
+
 class Vector2D:
     def __init__(self,x,y):
         self.x = x

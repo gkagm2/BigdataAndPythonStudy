@@ -9,4 +9,13 @@ class Television:
 
 
 print(Television.serialNumber)
+
+#객체를 3개 생성한다.
 tv = Television()
+print(Television.serialNumber) #생성할때마다 정적 변수가 1씩 증가하는 것을 볼 수 있다.
+
+tv2 = Television()
+print(Television.serialNumber)
+
+tv3 = Television()
+print(Television.serialNumber)
