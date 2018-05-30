@@ -17,4 +17,3 @@ a.reset()
 a.increment()
 a.increment()
 print("카운터 a의 값은 " , a.get())
-

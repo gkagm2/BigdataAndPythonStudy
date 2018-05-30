@@ -19,5 +19,5 @@ class Car:
 myCar = Car()
 myCar.setGear(3)
 myCar.setSpeed(100)
-
 print(myCar)
+
