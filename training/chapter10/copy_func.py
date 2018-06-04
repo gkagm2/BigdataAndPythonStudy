@@ -10,5 +10,3 @@ clone[0] = "white"
 
 print(colors)
 print(clone)
-
-
