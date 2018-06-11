@@ -16,6 +16,7 @@ studing site : https://www.learnpython.org/en/
 + chapter13 : recursion, sort, search
 + chapter20 : lambda
 + chapter21 : module
++ chapter22 : inner function & etc (from algorithm)
 
 ### bigdata
 + chapter2 :
